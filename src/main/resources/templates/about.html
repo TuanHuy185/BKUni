@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/css/homePage.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="/images/Logo.jpg" />
+
+    <title>Giới thiệu nhóm C-HTV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      :root {
+        --primary-dark: #2a8d57;
+        --secondary: #2563eb;
+        --secondary-dark: #1d4ed8;
+        --danger: #ef4444;
+        --danger-dark: #dc2626;
+        --text-primary: #1f2937;
+        --text-secondary: #4b5563;
+        --text-muted: #6b7280;
+        --background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+        --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        --card-shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.15);
+        --border-radius: 20px;
+        --spacing-sm: 10px;
+        --spacing-md: 20px;
+        --spacing-lg: 30px;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+      }
+      
+      body {
+        min-height: 100vh;
+        background: var(--background);
+      }
+      
+      .navbar {
+        padding: var(--spacing-md);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .logo-name {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        cursor: pointer;
+      }
+      
+      .logo-name .name {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      
+      .navbar ul {
+        display: flex;
+        gap: var(--spacing-lg);
+        list-style: none;
+      }
+      
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: opacity 0.3s;
+      }
+      
+      .navbar a:hover {
+        opacity: 0.8;
+      }
+      
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: var(--spacing-md);
+      }
+      
+      .title {
+        text-align: center;
+        color: var(--text-primary);
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--spacing-lg);
+        padding: var(--spacing-md);
+      }
+      
+      .member-card {
+        background: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      
+      .member-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--card-shadow-hover);
+      }
+      
+      .member-image {
+        aspect-ratio: 1;
+        overflow: hidden;
+      }
+      
+      .member-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+      
+      .member-card:hover .member-image img {
+        transform: scale(1.1);
+      }
+      
+      .member-info {
+        padding: var(--spacing-lg);
+      }
+      
+      .member-name {
+        font-size: 1.5rem;
+        color: var(--text-primary);
+        margin-bottom: 5px;
+      }
+      
+      .member-id {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-md);
+      }
+      
+      .member-role {
+        color: var(--secondary);
+        font-weight: 600;
+        margin-bottom: var(--spacing-sm);
+      }
+      
+      .member-detail {
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-md);
+        line-height: 1.5;
+      }
+      
+      .member-contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm);
+      }
+      
+      .contact-button {
+        padding: var(--spacing-sm);
+        border: none;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+      
+      .fb-button {
+        background: var(--secondary);
+      }
+      
+      .fb-button:hover {
+        background: var(--secondary-dark);
+      }
+      
+      .email-button {
+        background: var(--danger);
+      }
+      
+      .email-button:hover {
+        background: var(--danger-dark);
+      }
+      
+      @media (max-width: 768px) {
+        .container {
+          padding: 40px var(--spacing-sm);
+        }
+      
+        .title {
+          font-size: 2rem;
+          margin-bottom: var(--spacing-lg);
+        }
+      
+        .footer {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo-name" onclick="location.href='/index'">
+        <img src="/images/Logo.jpg" class="logo" /> <a href="/index" class="name">Bách Khoa Uni</a>
+      </div>
+      <ul>
+        <li>
+          <a href="/index">TRANG CHỦ</a>
+        </li>
+        <li>
+          <a href="/about">VỀ CHÚNG TÔI</a>
+        </li>
+      </ul>
+    </div>
+
+    <main class="container">
+      <h1 class="title">Thông tin các thành viên của tổ kỹ thuật</h1>
+
+      <div class="team-grid">
+        <!-- Các thẻ member được giữ nguyên nội dung nhưng được tối ưu cấu trúc -->
+        <article class="member-card">
+          <div class="member-image">
+            <img src="/images/LTH-avt.jpg" alt="Lâm Tuấn Huy" loading="lazy" />
+          </div>
+          <div class="member-info">
+            <h2 class="member-name">Lâm Tuấn Huy</h2>
+            <div class="member-id">ID: 2211185</div>
+            <div class="member-role">Front-end Developer</div>
+            <div class="member-detail">Thiết kế HTML</div>
+            <div class="member-contact">
+              <a href="https://www.facebook.com/lvtb185/" target="_blank" rel="noopener" class="contact-button fb-button">
+                <i class="fab fa-facebook"></i>
+                Facebook
+              </a>
+              <a href="mailto:huy.lamtuan1805@hcmut.edu.vn" class="contact-button email-button">
+                <i class="fas fa-envelope"></i>
+                Email
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="member-card">
+          <div class="member-image">
+            <img src="/images/avt1.jpg" alt="Mã Trường Vũ" loading="lazy" />
+          </div>
+          <div class="member-info">
+            <h2 class="member-name">Mã Trường Vũ</h2>
+            <div class="member-id">ID: 2213995</div>
+            <div class="member-role">Front-end Developer</div>
+            <div class="member-detail">Thiết kế HTML và database schema</div>
+            <div class="member-contact">
+              <a href="https://www.facebook.com/vu.ma.372" target="_blank" rel="noopener" class="contact-button fb-button">
+                <i class="fab fa-facebook"></i>
+                Facebook
+              </a>
+              <a href="mailto:vu.makhmtk22@hcmut.edu.vn" class="contact-button email-button">
+                <i class="fas fa-envelope"></i>
+                Email
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="member-card">
+          <div class="member-image">
+            <img src="/images/avt1.jpg" alt="Mã Trường Vũ" loading="lazy" />
+          </div>
+          <div class="member-info">
+            <h2 class="member-name">Mã Trường Vũ</h2>
+            <div class="member-id">ID: 2213995</div>
+            <div class="member-role">Front-end Developer</div>
+            <div class="member-detail">Thiết kế HTML và database schema</div>
+            <div class="member-contact">
+              <a href="https://www.facebook.com/vu.ma.372" target="_blank" rel="noopener" class="contact-button fb-button">
+                <i class="fab fa-facebook"></i>
+                Facebook
+              </a>
+              <a href="mailto:vu.makhmtk22@hcmut.edu.vn" class="contact-button email-button">
+                <i class="fas fa-envelope"></i>
+                Email
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="member-card">
+          <div class="member-image">
+            <img src="/images/avt1.jpg" alt="Mã Trường Vũ" loading="lazy" />
+          </div>
+          <div class="member-info">
+            <h2 class="member-name">Mã Trường Vũ</h2>
+            <div class="member-id">ID: 2213995</div>
+            <div class="member-role">Front-end Developer</div>
+            <div class="member-detail">Thiết kế HTML và database schema</div>
+            <div class="member-contact">
+              <a href="https://www.facebook.com/vu.ma.372" target="_blank" rel="noopener" class="contact-button fb-button">
+                <i class="fab fa-facebook"></i>
+                Facebook
+              </a>
+              <a href="mailto:vu.makhmtk22@hcmut.edu.vn" class="contact-button email-button">
+                <i class="fas fa-envelope"></i>
+                Email
+              </a>
+            </div>
+          </div>
+        </article>
+        <!-- Các member card khác giữ nguyên cấu trúc tương tự -->
+      </div>
+    </main>
+
+    <div class="more-info" id="end-of-page">
+      <div style="padding-left: 50px;">
+        <p>
+          Thư điện tử : bk_uni@gmail.com. <br /> <br /> Đường dây nóng : (+84) 975 801 426.
+          <br /> <br /> Địa chỉ : Khu phố Tân Lập, Phường Đông Hòa, TP. Dĩ An, Tỉnh Bình Dương.
+        </p>
+      </div>
+      <div style="text-align: right; font-family: sans-serif;">
+        <p>
+          <i class="bx bxs-copyright"></i> Bản quyền thuộc về: Đội kỹ thuật Trường Đại học Bách Khoa HCM
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
