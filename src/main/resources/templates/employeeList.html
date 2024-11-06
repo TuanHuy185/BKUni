@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee list page</title>
+    <link rel="stylesheet" href="/css/employeeList.css" />
+    <link rel="stylesheet" href="/css/dropdown.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="/js/employeeList.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav th:replace="navbar :: nav"></nav>
+
+        <section class="main">
+            <div class="table-wrapper">
+                <h1>Danh sách nhân viên</h1>
+                <div class="data-manipulation">
+                    <div class="filter">
+                        <!-- <div class="title">
+                            Loc chi nhanh <br>  
+                            Loc nhan vien
+                        </div> -->
+                        <div class="dropdown">
+                            <p>chi nhánh</p>|   
+                            <div class="dropdown-content">
+                                <button onclick="location.href='/employeeList'"> Tất cả</button>
+                                <button onclick="searchProductLot(1)">Chi nhánh 1</button>
+                                <button onclick="searchProductLot(2)">Chi nhánh 2</button>
+                                <button onclick="searchProductLot(3)">Chi nhánh 3</button>
+                                <button onclick="searchProductLot(4)">Chi nhánh 4</button>
+                                <button onclick="searchProductLot(5)">Chi nhánh 5</button>
+                            </div>
+                            <div id = "branchContent">Tất cả</div>
+                        </div>
+                        
+                        <div class="dropdown">
+                            <p>nhân viên</p>|
+                            <div class="dropdown-content">
+                                <button onclick="location.href='/employeeList'">Tất cả</button>
+                                <button onclick="callManager()">Quản lí</button>
+                                <button onclick="callCashier()">Thu ngân</button>
+                                <button onclick="callSupervisor()">Giám sát</button>
+                                <button onclick="callNormalEmployee()">Nhân viên khác</button>
+                            </div>
+                            <div id = "empTypeContent">Tất cả</div>
+                        </div>
+                    </div>
+                        
+                    <form id="searchForm" class="search-box" action="">
+                        <!--icon------>
+                        <i class="fas fa-search"></i>
+                        <!--input----->
+                        <input type="text" class="search-input" placeholder="Tìm Kiếm" name="search" size="80px" id = "searchBox"
+                            required>
+                        <!--btn------->
+                        <!-- <input type="submit" class="search-btn" value="Search"> -->
+                        <button type="button" class="search-btn" value="Search" onclick="searchEmployees()">Search</button>
+                    </form>
+
+                    <button type="button" class="add" onclick="location.href='/employeeList/insert'">
+                        <i class="fas fa-plus" aria-hidden="true"></i>
+                        Thêm Nhân Viên
+                    </button>
+                </div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th onclick="sortByEmployeeID()">MSNV <i class="fas fa-sort" onclick="sortByEmployeeID()"></i></th>
+                            <th>Họ và tên</th>
+                            <th>CCCD</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                            <th onclick="sortBySupervisorID()">Giám sát viên <i class="fas fa-sort" onclick="sortBySupervisorID()"></i></th>
+                            <th>Lương</th>
+                            <th onclick="sortByBranchID()">Chi nhánh <i class="fas fa-sort" onclick="sortByBranchID()"></i></th>
+                            <th>Chỉnh sửa</th>
+                        </tr>
+                    </thead>
+                    <tbody id = "employeeBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
