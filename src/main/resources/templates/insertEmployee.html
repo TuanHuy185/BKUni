@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"></html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display page</title>
+    <link rel="stylesheet" href="/css/employeeList.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/inforCard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="/js/insertEmployee.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav th:replace="navbar :: nav"></nav>
+
+        <section class="main">
+            <div class="infor-card">
+                <header>
+                    <h1>Thêm Nhân Viên</h1>
+                    <!-- <span onclick="location.href='/profile/edit'">Chỉnh Sửa</span> -->
+                </header>
+                <form class="infor-content" id = "infoForm">
+                    <!-- <div class="title">Thông tin chung</div> -->
+                    <div class="field-wrapper">
+                        
+                        <div class="field">
+                            <label for="">Họ</label>
+                            <!-- <div class="infor-text"></div> -->
+                            <br>
+                            <input type="text" class ="infor-text Lname" id = "Lname" name ="lastName" required>
+
+                            
+                        </div>
+                        <div class="field">
+                            <label for="">Tên đệm</label>
+                            <!-- <div class="infor-text"></div> -->
+                            <br>
+                            <input type="text" class ="infor-text Mname" id = "Mname" name = "middleName" required>
+
+                            
+                        </div>
+
+                        <div class="field">
+                            <label for="">Tên</label>
+                            <!-- <div class="infor-text"></div> -->
+                            <br>
+                            <input type="text" class ="infor-text Fname" id = "Fname" name = "firstName" required>
+
+                            
+                        </div>
+
+                        <div class="field">
+                            <label for="">MSNV</label>
+                            <!-- <div class="infor-text"></div> -->
+                            <br>
+                            <input type="text" class ="infor-text empID" id = "empID" name = "employeeID" required>
+
+                            
+                        </div>
+                        <div class="field">
+                            <label for="">Giám sát viên</label>
+                            <!-- <div class="infor-text"></div> -->
+                            <br>
+                            <input type="text" class ="infor-text supID" id ="supID" name = "supervisorID" placeholder="(Nếu có)">
+
+                            
+                        </div>
+
+                        <div class="field">
+                            <label for="">Chi nhánh</label>
+                            <!-- <div class="infor-text"></div> -->
+                            <br>
+                            <input type="text" class ="infor-text brID" id = "brID" name = "branchID" required>
+
+                            
+                        </div>
+
+
+                        <div class="field">
+                            <label for="">CCCD</label>
+                            <!-- <div class="infor-text"></div> -->
+                            <br>
+                            <input type="text" class ="infor-text mycccd" id = "mycccd" name = "cccd" required>
+
+                            
+                        </div>
+
+                        <div class="field">
+                            <label for="">Số điện thoại</label>
+                            <!-- <div class="infor-text"></div> -->
+                            <br>
+                            <input type="text" class ="infor-text mysdt" id = "mysdt" name = "phoneNo" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="">Email</label>
+                            <!-- <div class="infor-text"></div> -->
+                            <br>
+                            <input type="text" class ="infor-text myemail" id = "myemail" name = "email" placeholder="vd: abc@gmail.com"required>
+                        </div>
+                        <div class="field">
+                            <label for="">Lương (triệu)</label>
+                            <!-- <div class="infor-text"></div> -->
+                            <br>
+                            <input type="text" class ="infor-text mysalary" id ="mysalary" name = "salary" required>
+                        </div>
+                    </div>
+                    <input type="submit" value="Tạo mới ngay!" class="submit click">
+                    <p class="error" id="postStatus" style="display: none;"><br>Mời bạn nhập lại. </p>
+                    <p class="error" id="postMessage" style="display: none;">Do thiếu nội dung (*).</p>
+                </form>
+            </div>
+            
+        </section>
+    </div>
+</body>
+
+</html>
