@@ -1,0 +1,99 @@
+:root {
+    --background-color: #dfe9f5;
+    --nav-item-hover-color: #0957A8;
+    --logo-bar-color: #0957A8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background-color);
+}
+
+.container {
+    display: flex;  
+}
+
+.nav-bar {
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    width: 230px;
+    background: #fff;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.user {
+    text-align: center;
+    display: flex;
+    margin: 10px 0 0 0px;
+    padding-bottom: 3rem;
+}   
+
+.user-name {
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+a {
+    position: relative;
+    width: 280px;
+    font-size: 14px;
+    color: rgb(85, 83, 83);
+    display: table;
+    padding: 10px;
+}
+
+nav .fas {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: 16px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item {
+    position: relative;
+    top: 15px;
+    margin-left: 10px;
+}
+
+
+a:hover {
+    background: #eee;
+}
+
+a:hover i {
+    color: var(--nav-item-hover-color);
+    transition: 0.5s;
+}
+
+.logout {
+    position: absolute;
+    bottom: 20px;
+}
+
+/* logo name bar section  */
+.main {
+    position: relative;
+    padding: 15px;
+    padding-top: 0;
+    width: 100%;
+}
