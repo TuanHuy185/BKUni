@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display page</title>
+    <link rel="stylesheet" href="/css/employeeList.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="/js/productLot.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav th:replace="navbar :: nav"></nav>
+
+        <section class="main">
+            <div class="table-wrapper">
+                <h1>Danh sách Sản phẩm</h1>
+                <div class="data-manipulation">
+                    <form id="searchForm" class="search-box" action="">
+                        <!--icon------>
+                        <i class="fas fa-search"></i>
+                        <!--input----->
+                        <input type="text" class="search-input" placeholder="Nhập ngày hết hạn" name="expiredDay"
+                            size="80px" id="expiredDay" required>
+                        |
+                        <input type="text" class="search-input" placeholder="Nhập mã lô sản phẩm (nếu cần)" name="billID"
+                            size="80px" id="billID">
+                        <!--btn------->
+                        <!-- <input type="submit" class="search-btn" value="Search" id = "SearchBox"> -->
+                        <button type="button" class="search-btn" value="Search" id ="SearchBox"
+                            onclick="searchProductLot()">Search</button>
+                    </form>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Lô sản phẩm</th>
+                            <th>Mã loại sản phẩm</th>
+                            <th>Số lượng trong lô</th>
+                            <th>Ngày hết hạn</i></th>
+                        </tr>
+                    </thead>
+                    <tbody id="productBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
