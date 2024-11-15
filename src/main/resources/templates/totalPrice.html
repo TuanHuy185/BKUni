@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TotalPrice page</title>
+    <link rel="stylesheet" href="/css/employeeList.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <nav th:replace="navbar :: nav"></nav>
+
+        <section class="main">
+            <div class="table-wrapper">
+                <div class="table-top" style = "display: flex; justify-content: space-between;">
+                    <h1>Sản phẩm trong hóa đơn</h1>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Mã hóa đơn <i class="fas fa-sort"></i></th>
+                            <th>Tổng tiền <i class="fas fa-sort"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody id = "productBillBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <script src="/js/billPrice.js"></script>
+</body>
+
+</html>
