@@ -97,3 +97,11 @@ a:hover i {
     padding-top: 0;
     width: 100%;
 }
+
+.nav-bar a.active {
+    color: #ffffff;
+    background-color: #007bff; /* Màu nền khi được chọn */
+    border-radius: 8px;
+    padding: 0.5em;
+}
+
