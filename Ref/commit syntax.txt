@@ -1,0 +1,11 @@
+docs(short-text): detail text   
+-> use docs syntax when you implement changes in file such as: add line, delete line, revise text, format code
+
+build(short-text): detail text
+-> use build syntax when you implement changes in folder such as: add file, delete file, move file, add folder, delete folder, move folder, ...
+
+fix(short-text): detail text
+-> use fix syntax when your project is not running because previous commit error
+
+Merge branch 'dev' of https://github.com/ABsievil/POS_System into dev
+-> use when commit in your local is different from remote's commit, you need to pull code and merge conflict before push, Please contact your co-worker to resolve conflicts

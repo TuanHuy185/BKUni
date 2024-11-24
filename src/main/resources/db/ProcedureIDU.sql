@@ -1,11 +1,3 @@
-/*select * from branch
-select * 
-from employee
-select * 
-from manager
-
-*/
-
 GO
 
 -- thủ tục thêm nhân viên mới 
@@ -294,23 +286,6 @@ end;
 drop proc updateName
 --------------------------------------------
 exec updateName 1,N'Nguyễn',N'Mỹ',N'Trang'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 -- thủ tục xóa chi nhánh 
 create proc deletebranch 
