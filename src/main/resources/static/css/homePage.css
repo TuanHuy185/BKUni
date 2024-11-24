@@ -1,9 +1,11 @@
 :root {
     --primary-color: #51A4F1;
-    --secondary-color: #0957A8;
+    --secondary-color: #51A4F1;
     --text-light: #ffffff;
     --spacing-base: 1rem;
     --transition-speed: 0.5s;
+    --hover-color: #33CCFF; /* Ví dụ: màu vàng khi hover */
+    --text-dark: #333333;  /* Màu tối cho chữ */
 }
 
 * {
@@ -31,6 +33,7 @@ body {
     background-size: cover;
     background-position: center;
     position: relative;
+    
 }
 
 .navbar {
@@ -131,32 +134,20 @@ body {
     border-radius: 25px;
     font-weight: bold;
     border: 2px solid var(--secondary-color);
-    background: transparent;
-    color: var(--text-light);
+    background: var(--secondary-color); /* Màu nền mặc định */
+    color: var(--text-light); /* Màu chữ */
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    transition: all var(--transition-speed);
-}
-
-.btn span {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 100%;
-    background: var(--secondary-color);
-    z-index: -1;
-    transition: width var(--transition-speed);
-}
-
-.btn:hover span {
-    width: 100%;
+    transition: all var(--transition-speed); /* Thời gian chuyển đổi */
 }
 
 .btn:hover {
-    border-color: transparent;
+    background: var(--hover-color); /* Màu nền khi hover */
+    color: var(--text-dark); /* Màu chữ khi hover */
+    border-color: var(--hover-color); /* Đổi màu viền nếu cần */
 }
+
 
 .footer {
     background-color: var(--primary-color);
